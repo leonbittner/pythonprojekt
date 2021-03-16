@@ -11,6 +11,7 @@ Die Daten werden von der Schnittstelle im JSON Format beantwortet. Für jeden Ta
 
 Es werden durch die for-Schleife zwei Listen befüllt: "dates" und "fallzahlen". Mithilfe der Bibliothek "termplotlib" werden die Listen in der Kommandozeile geplottet. Außerdem wird die tagesaktuelle Zahl der aktiv Infizierten, Genesenen Menschen und der Todesfälle ausgegeben. 
 
+Wichtig: Bitte Python Version 3 zur Ausführung benutzen!
 """
 
 import http.client
@@ -18,10 +19,8 @@ import json
 import datetime
 import time
 import termplotlib as tpl
-import numpy
 from tqdm import tqdm
 import csv
-import sys
 
 dates = []
 fallzahlen = []
@@ -46,7 +45,7 @@ def getdata(land):
     one_day = datetime.timedelta(days=1)
     #Das aktuelle Datum wird um 31 Tage zurückdatiert.
     first_day = datetime.date.today() - datetime.timedelta(days=31)
-    #In diesem CSV File werden die Iso-Kennungen der Länder gespeichert. 
+    #In diesem CSV File werden die ISO-Kennungen der Länder gespeichert. 
     csv_file = csv.reader(open('isocodes.csv', "r"), delimiter=";")
     for i in tqdm(range(31)):
         #Hier wird geprüft, ob die Usereingabe ein Bundesland in Deutschland oder ein Nationalstaat ist.
@@ -110,16 +109,10 @@ def showFigures():
     print("\nDatum    Gemeldete Fälle")
     fig.show()
 
-
 def main():
-    print(
-        "Guten Tag! Gerne informiere ich Sie über die Covid-19-Lage in Ihrem Land."
-    )
+    print("Guten Tag! Gerne informiere ich Sie über die Covid-19-Lage in Ihrem Land.")
     time.sleep(2)
-    getdata(
-        input(
-            "Für welches Land soll ich Ihnen die aktuellen Zahlen mitteilen? \nGeben Sie entweder ein Bundesland in Deutschland (z.B. Niedersachsen) oder einen Nationalstaat (z.B. Japan) ein .\n"
-        ))
+    getdata(input("Für welches Land soll ich Ihnen die aktuellen Zahlen mitteilen? \nGeben Sie entweder ein Bundesland in Deutschland (z.B. Niedersachsen) oder einen Nationalstaat (z.B. Japan) ein .\n"))
 
 
 main()
