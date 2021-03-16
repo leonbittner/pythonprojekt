@@ -7,20 +7,24 @@ Der Bot kann Daten eines spezifischen deutschen Bundeslandes anzeigen. Dafür wi
 
 Es können auch Nationalstaaten abgefragt werden (hier jedoch nur Gesamtzahlen, keine Regionen bzw. Bundesländer). Dafür wird anstelle des Bundeslandes eine Anfrage mit dem ISO Code des Landes an die Schnittstelle geschickt (z.B. DEU für Deutschland). Um den ISO Code zu ermitteln, wird die Usereingabe mit einer CSV Datei abgeglichen, in welcher der deutsche Name jedes Staates mit dem entsprechenden ISO Code hinterlegt wird.
 
-Die Daten werden von der Schnittstelle im JSON Format beantwortet. Für jeden Tag muss eine einzelne Anfrage gestellt werden. Um die Daten der letzten 30 Tage anzuzeigen, wird das aktuelle Datum um 30 Tage rückdatiert und mit einer for-Schleife wird in jedem Durchgang ein Tag addiert und eine neue Anfrage erstellt.
+Die Daten werden von der Schnittstelle im JSON Format beantwortet. Für jeden Tag muss eine einzelne Anfrage gestellt werden, dies ist zwar performance-technisch nicht optimal, allerdings der Architektur der Schnittstelle geschuldet. Um die Daten der letzten 30 Tage anzuzeigen, wird das aktuelle Datum um 30 Tage rückdatiert und mit einer for-Schleife wird in jedem Durchgang ein Tag addiert und eine neue Anfrage erstellt.
 
-Es werden durch die for-Schleife zwei Listen befüllt: "dates" und "fallzahlen". Mithilfe der Bibliothek "termplotlib" werden die Listen in der Kommandozeile geplottet. Außerdem wird die tagesaktuelle Zahl der aktiv Infizierten, Genesenen Menschen und der Todesfälle ausgegeben. 
+Es werden durch die for-Schleife zwei Listen befüllt: "dates" und "fallzahlen". Mithilfe der Bibliothek "termplotlib" werden die Listen in der Kommandozeile geplottet. Außerdem wird die tagesaktuelle Zahl der aktiv Infizierten, genesenen Menschen und der Todesfälle ausgegeben. 
 
-Wichtig: Bitte Python Version 3 zur Ausführung benutzen!
+Wichtig: Bitte Python Version 3 zur Ausführung benutzen. Vor dem ersten Ausführen mit pip [bzw. pip3] die Packages "tqdm" sowie "termplotlib" installieren.
 """
 
 import http.client
 import json
 import datetime
 import time
-import termplotlib as tpl
+#import termplotlib as tpl
 from tqdm import tqdm
 import csv
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import numpy as np
+
 
 dates = []
 fallzahlen = []
@@ -80,13 +84,13 @@ def getdata(land):
         #Die Variable "first_day" wird um einen Tag erhöht, damit der nächste Tag in der nächsten Interation abgefragt wird.
         first_day = first_day + one_day 
     #Die Zahl der Neuinfektionen wird geplottet und die restlichen Werte in der Kommandozeile ausgegeben.
-    showFigures()
     print("\nIn " + land + " gibt es zur Zeit " +
           str(fallzahl) + " Neuinfektionen, " +
           str(aktiv_infiziert) + " aktiv Infizierte, " +
           str(genesen) + " Genesene und " +
           str(verstorben) + " Todesfälle. ")
-    print("Quelle: Johns Hopkins University")
+    print("Quelle: Johns Hopkins University\n\nBitte Grafik schließen, um fortzufahren.")
+    showFigures(land)
     #Die Listen werden für die nächste Abfrage zurückgesetzt.
     dates = []
     fallzahlen = []
@@ -102,17 +106,28 @@ def proceed():
         exit()
 
 
-def showFigures():
-    #Die Daten werden in der Kommandozeile geplottet.
-    fig = tpl.figure()
-    fig.barh(fallzahlen, dates, force_ascii=True)
-    print("\nDatum    Gemeldete Fälle")
-    fig.show()
+def showFigures(land):
+    x = np.array(dates)
+    y = np.array(fallzahlen)
+    # create a figure and axes 
+    fig, ax = plt.subplots() 
+    fig.canvas.set_window_title("Covidzahlen " + land)      
+    # setting title to graph 
+    ax.set_title('Neuinfektionen der letzten 30 Tage in ' + land) 
+      
+    #X- und Y-Achse beschriften
+    ax.set_ylabel('Neuinfektionen') 
+    ax.set_xlabel('Datum') 
+    #Beschriftung der X-Achse einstellen
+    fig.autofmt_xdate()
+    ax.bar(x, y) 
+    ax.xaxis.set_major_locator(plt.MaxNLocator(10))
+    plt.show() 
 
 def main():
     print("Guten Tag! Gerne informiere ich Sie über die Covid-19-Lage in Ihrem Land.")
     time.sleep(2)
-    getdata(input("Für welches Land soll ich Ihnen die aktuellen Zahlen mitteilen? \nGeben Sie entweder ein Bundesland in Deutschland (z.B. Niedersachsen) oder einen Nationalstaat (z.B. Japan) ein .\n"))
+    getdata(input("Für welches Land soll ich Ihnen die aktuellen Zahlen mitteilen? \nGeben Sie entweder ein Bundesland in Deutschland (z.B. Niedersachsen) oder einen Nationalstaat (z.B. Japan) ein.\n"))
 
 
 main()
