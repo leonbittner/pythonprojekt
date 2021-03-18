@@ -7,6 +7,7 @@ Wenn der Schläger den Ball verliert, bekommt man einen neuen Ball, verliert man
 Die Leben werden dabei oben Links in der Ausgabe angezeigt. 
 Außerdem kann der Spieler während des Spiel seine Treffer mit dem Schläger sehen. Diese Treffer werden auf der Score-Anzeige unten links ausgegeben. 
 Der Score bezieht sich auf die erzielten Treffer während der ganzen drei Leben.
+Requirements: pip install pygame
 
 """
 import pygame, random, sys
