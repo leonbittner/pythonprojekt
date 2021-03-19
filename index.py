@@ -60,13 +60,9 @@ def funktionsaufruf(eingabe):
             #Starte TicTacToeModul. 
             TicTacToe = TIC_TAC_TOE.HendriksTicTacToe(nutzername)
             TicTacToe.starte_Spiel()
-        if i in Spiel2:
-            #Marius_Pong.main()
-
+        #if i in Spiel2:
+           # Marius_Pong.main()
     #------------------------Marius----------------------
-            covidzahlen.main()
-
-
         if i in Wetter:
             #Starte NewsModul.
             wetterfunktion.wetteraufruf()

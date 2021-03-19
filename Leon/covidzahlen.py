@@ -56,13 +56,13 @@ def getdata(land):
             conn.request("GET","/reports?region_province=" + land +"%20&iso=DEU&date=" + str(first_day),headers=headers)
         else:
             for row in csv_file:
-              if land.lower() == row[0].lower():
-                iso = row[1]         
+                if land.lower() == row[0].lower():
+                    iso = row[1]         
             try:  
               conn.request("GET","/reports?iso=" + iso + "&date=" + str(first_day),headers=headers)
             except UnboundLocalError:
               print("\nEntschuldigung! Dieses Land kenne ich leider nicht. Bitte verändern Sie die Formulierung oder wählen Sie ein anderes Land. \n")
-              proceed()
+              break
         res = conn.getresponse()
         data = res.read()
         covdata = json.loads(data)
@@ -83,18 +83,20 @@ def getdata(land):
         #Die Variable "first_day" wird um einen Tag erhöht, damit der nächste Tag in der nächsten Interation abgefragt wird.
         first_day = first_day + one_day 
     #Die Zahl der Neuinfektionen wird geplottet und die restlichen Werte in der Kommandozeile ausgegeben.
-    print("\nIn " + land + " gibt es zur Zeit " +
-          str(fallzahl) + " Neuinfektionen, " +
-          str(aktiv_infiziert) + " aktiv Infizierte, " +
-          str(genesen) + " Genesene und " +
-          str(verstorben) + " Todesfälle. ")
-    print("Quelle: Johns Hopkins University\n\nBitte Grafik schließen, um fortzufahren.")
-    showFigures(land)
-    #Die Listen werden für die nächste Abfrage zurückgesetzt.
-    dates = []
-    fallzahlen = []
-    proceed()
-
+    try:
+        print("\nIn " + land + " gibt es zur Zeit " +
+            str(fallzahl) + " Neuinfektionen, " +
+            str(aktiv_infiziert) + " aktiv Infizierte, " +
+            str(genesen) + " Genesene und " +
+            str(verstorben) + " Todesfälle. ")
+        print("Quelle: Johns Hopkins University\n\nBitte Grafik schließen, um fortzufahren.")
+        showFigures(land)
+        #Die Listen werden für die nächste Abfrage zurückgesetzt.
+        dates = []
+        fallzahlen = []
+        proceed()
+    except UnboundLocalError:
+        proceed()
 
 def proceed():
     weiter = input("Möchten Sie eine weitere Abfrage tätigen?\n")
@@ -102,6 +104,7 @@ def proceed():
         getdata(input("Bitte geben Sie das Land für die neue Anfrage ein:\n"))
     else:
         print("Ich wünsche Ihnen einen schönen Tag.")
+       
 
 
 def showFigures(land):
@@ -129,5 +132,5 @@ def main():
     getdata(input("Für welches Land soll ich Ihnen die aktuellen Zahlen mitteilen? \nGeben Sie entweder ein Bundesland in Deutschland (z.B. Niedersachsen) oder einen Nationalstaat (z.B. Japan) ein.\n"))
 
 
-#main()
+main()
 
