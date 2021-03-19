@@ -54,7 +54,7 @@ pygame.display.set_caption("Pong Game")
 
 #Erstellung des Spielfeldscreens über pygame und einer Tupelliste für die Größe
 spielfeld = pygame.display.set_mode([x,y])
-back_image = pygame.image.load(r"Bild_arcade.jpg")
+back_image = pygame.image.load(r"Marius/Bild_arcade.jpg")
 back_top = spielfeld.get_height() - back_image.get_height()
 back_left = spielfeld.get_width()/2 - back_image.get_width()/2
 spielfeld.blit(back_image, (back_left,back_top))
