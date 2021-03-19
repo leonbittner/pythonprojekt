@@ -77,4 +77,4 @@ def news_proceed():
         print("\nBis zum nächsten Mal!")
         exit()
 
-news_main()
+#news_main()
