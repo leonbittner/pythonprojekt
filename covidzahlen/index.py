@@ -107,12 +107,13 @@ def proceed():
 
 
 def showFigures(land):
+    #Die Listen "dates" und "fallzahlen" werden mithilfe von numpy und matplotlib geplottet.
     x = np.array(dates)
     y = np.array(fallzahlen)
-    # create a figure and axes 
+    
     fig, ax = plt.subplots() 
     fig.canvas.set_window_title("Covidzahlen " + land)      
-    # setting title to graph 
+    #Fenstertitel einstellen
     ax.set_title('Neuinfektionen der letzten 30 Tage in ' + land) 
       
     #X- und Y-Achse beschriften

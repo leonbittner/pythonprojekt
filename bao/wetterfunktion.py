@@ -13,7 +13,7 @@ import requests
 import json
 import re
 import pandas as pd
-
+ 
 def wetteraufruf(): 
 
         abfrage=input("\nWähl Temperatur, Wetter oder die Vorhersage für die nächsten Tage aus und den Ort: ")
