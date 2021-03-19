@@ -25,6 +25,7 @@ def funktionsaufruf(eingabe):
     if eingabe == "bye":
         print("Bis zum nächsten Mal, " + nutzername)
         status = 0
+        exit()
         return 
 
     eingabe = eingabe.lower()
@@ -77,10 +78,12 @@ def funktionsaufruf(eingabe):
             Sport_Kalender_Einkaufen.addEL()
         else:
             print("Das kenne ich leider noch nicht")
-        
+
+
+
 eingabe = input("Was möchtest du ausprobieren?\n ")
 funktionsaufruf(eingabe)
 
-while status == 1:
-    eingabe = input("Kann ich dir noch anders helfen?\n ")
+if status == 1:
+    eingabe = input("Kann ich dir noch anders helfen?\n Bitte wähle aus meinen Funktionalitäten:\n - Aktuelle Covid-19-Zahlen (Länder o. Bundesländer)​ \n - Aktuelle News/Schlagzeilen​ \n - Live Wetter / Wetteraussichten​ \n - Kalenderinformationen​ \n - Ihre Einkaufsliste \n - Der Arcade-Klassiker Pong​ \n - Das Legendäre TicTacToe \n - Wähle 'bye' zum Beenden. \n")
     funktionsaufruf(eingabe)

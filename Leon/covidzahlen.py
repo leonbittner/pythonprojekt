@@ -25,7 +25,6 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import numpy as np
 
-
 dates = []
 fallzahlen = []
 bundeslaender = [
@@ -103,7 +102,6 @@ def proceed():
         getdata(input("Bitte geben Sie das Land für die neue Anfrage ein:\n"))
     else:
         print("Ich wünsche Ihnen einen schönen Tag.")
-        exit()
 
 
 def showFigures(land):
