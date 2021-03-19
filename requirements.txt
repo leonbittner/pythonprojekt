@@ -1,0 +1,8 @@
+pygame
+gnewsclient
+tqdm
+termplotlib
+requests
+colorama
+python-Levenshtein
+pandas
