@@ -83,6 +83,5 @@ def news_proceed():
         news_get_data(input("\nBitte wählen Sie ein individuelles Thema oder eine Kategorie: Schlagzeilen, Wirtschaft, Unterhaltung, Gesundheit, Wissenschaft, Sport oder Technologie?\n"))
     else:
         print("\nBis zum nächsten Mal!")
-        exit()
 
 #news_main()
