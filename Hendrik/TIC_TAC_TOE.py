@@ -139,13 +139,13 @@ class HendriksTicTacToe():
     def csv_hnadling(self, spielzeit):
         #Es wird überprüft, ob der tmp Ordner existiert.
         try:
-            with open('C:/tmp/test.csv', 'a') as f:
+            with open('Hendrik/test.csv', 'a') as f:
                 #f.write(self.spielername)
                 f.writelines(self.spielername + ";" + str(spielzeit)  + '\n')
                 print("Speichere Ergebnisse")
                 f.close()
 
-            with open('C:/tmp/test.csv', 'r') as f:
+            with open('Hendrik/test.csv', 'r') as f:
                 print("Lade Highscoreboard")
                 read = f.readlines()
                 #print(read)
