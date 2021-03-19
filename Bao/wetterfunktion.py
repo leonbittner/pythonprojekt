@@ -109,5 +109,4 @@ def wetteraufruf():
 
         nachfrage()
     
-#start der Funktion       
-wetteraufruf()
+
