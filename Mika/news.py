@@ -1,11 +1,20 @@
-# Methode TextLower + Textbereinigung
-# Methode proceed() ja-Alternativen
+"""
+Mika Selent
+Matr.: 41326
+
+Diese Funktion des Bots kann die tagesaktuellen News einer allgemeinen Kategorie oder eines individuellen Themas anzeigen.
+Die Daten stammen aus einer Schnittstelle von 'newsapi.org'. Dafür wird die Benutzereingabe mit einem Dictionary der Kategorien abgeglichen.
+Wenn ein individuelles Thema eingegeben wurde, wird nach möglichen verfügbaren Artikeln gesucht.
+Die Daten werden von der Schnittstelle im JSON Format beantwortet. Ausgegeben werden immer nur die ersten fünf Artikel, sortiert nach Popularität.
+Wenn zu der Benutzereingabe weder Artikel einer Kategorie, noch Artikel eines individuellen Themas gefunden werden, kann eine neue Anfrage getätigt werden.
+Vorraussetzung: pip install requests, colorama
+
+"""
 from datetime import date
 import time
-#import re
 import json
 import requests
-from colorama import init, Fore#, Back
+from colorama import init, Fore
 
 init(autoreset=True)
 
@@ -23,7 +32,6 @@ def news_main():
 def news_get_data(category_request):
     # Input ist nicht case-sensitive
     category_request = category_request.lower()
-    #category_request = (" ".join(re.findall(r"[a-züäöß]*", category_request ))).replace("  ", " ")
     # API-Key wird aus einer Textdatei eingelesen
     api_key = open('api_key.txt', 'r')
     # Hier wird geprüft, ob die eingegebene Kategorie vorhanden ist
