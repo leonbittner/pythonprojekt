@@ -132,5 +132,5 @@ def main():
     getdata(input("Für welches Land soll ich Ihnen die aktuellen Zahlen mitteilen? \nGeben Sie entweder ein Bundesland in Deutschland (z.B. Niedersachsen) oder einen Nationalstaat (z.B. Japan) ein.\n"))
 
 
-main()
+#main()
 
