@@ -50,7 +50,7 @@ def getdata(land):
     #Das aktuelle Datum wird um 31 Tage zurückdatiert.
     first_day = datetime.date.today() - datetime.timedelta(days=31)
     #In diesem CSV File werden die ISO-Kennungen der Länder gespeichert. 
-    csv_file = csv.reader(open('isocodes.csv', "r"), delimiter=";")
+    csv_file = csv.reader(open('Leon/isocodes.csv', "r"), delimiter=";")
     for i in tqdm(range(31)):
         #Hier wird geprüft, ob die Usereingabe ein Bundesland in Deutschland oder ein Nationalstaat ist.
         if land.lower() in bundeslaender:
