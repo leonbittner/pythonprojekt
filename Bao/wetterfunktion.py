@@ -1,11 +1,13 @@
 '''
 In dieser Funktion des Chatbots kann die Temperatur, das Wetter oder die Vorhersage der nächsten 5 Tage aus 
-Hannover abgefragt werden. Mit der Eingabe einer anderen Stadt mit dem vorherigen Keyword 'in', 
-kann die Temperatur, das Wetter oder die Vorhersage auch für eine andere Stadt abgefragt werden. Die Temperaturabfrage
-gibt die momentane Temperatur der Stadt und die gefühlte Temperatur wieder. Das Wetter gibt eine Beschreibung der 
+Hannover abgefragt werden. Es kann auch eine andere Stadt mit eingegeben werden und die dazugehörige Temperatur, Wetter, Vorhersage
+wird wiedergegeben für die genannte Stadt
+Beispieleingabe: Kann ich in berlin die temperatur haben. 
+Die Temperaturabfrage gibt die momentane Temperatur der Stadt und die gefühlte Temperatur wieder. Das Wetter gibt eine Beschreibung der 
 momentanen Wetterlage und die Vorhersage für die nächsten 5 Tage wird in einer Tabelle (pandas) dargestellt in 3h-Schritten mit
 dem Zeitraum, Mindesttemperatur, Maximaltemperatur und der Beschreibung des Wetters.
 Die Daten stammen aus der Schnittstelle der openweathermap.
+In der Abfrage 'Willst du weitere Wetterdaten:' kann entweder mit ja oder nein beantwortet werden
 Voraussetzung für die Ausführung: pip install requests, pip install pandas
 '''
 #!/usr/bin/env python
@@ -13,42 +15,53 @@ import requests
 import json
 import re
 import pandas as pd
- 
-def wetteraufruf(): 
 
+def wetteraufruf(): 
+        
         abfrage=input("\nWähl Temperatur, Wetter oder die Vorhersage für die nächsten Tage aus und den Ort: ")
         abfrage=abfrage.lower()
         
         #mithilfe der Stadteingabe und der Art der Wetterabfrage, wird die genaue url bestimmt
         def urlfilter(abfrage, forecast):
             api_key = "c1748d6d84202a02706599d37ebc497b"
-            stadteingabe = re.search('(?<=in )\w+', abfrage)
             vorhersage=forecast
+            frage=abfrage.split()
             
-            if stadteingabe is None:
-                stadt="Hannover"
+            a=0
+            while a<len(frage):
+                stadt=frage[a].capitalize()
+                url = f"https://api.openweathermap.org/data/2.5/{vorhersage}?q={stadt},DE&appid={api_key}&units=metric"
+                response = requests.get(url)
+                x= response.json()
 
-            else:
-                stadt=stadteingabe.group().capitalize()
 
-            url = f"https://api.openweathermap.org/data/2.5/{vorhersage}?q={stadt},DE&appid={api_key}&units=metric"
-            response = requests.get(url)
-            x= response.json()
+                if x["cod"]!="404" and frage[a]!="wetter":
+                    a=len(frage)+1
+                    
+                    
 
+                else:
+                    stadt="Hannover"
+                    url = f"https://api.openweathermap.org/data/2.5/{vorhersage}?q={stadt},DE&appid={api_key}&units=metric"
+                    response = requests.get(url)
+                    x= response.json()
+                a=a+1
+            
             return x
+
 
         # weitere Abfrage ob die Wetterabfrage wiederholt werden soll
         def nachfrage():
-                frage=input('\nWillst du weitere Wetterdaten:')
-                frage.lower()
+            frage=input('\nWillst du weitere Wetterdaten:')
+            frage.lower()
 
-                if frage=="ja":
-                    wetteraufruf()
-                elif frage=="nein":
-                    exit()
-                else:
-                    print('\nAntworte bitte mit ja oder nein')
-                    nachfrage()
+            if frage=="ja":
+                wetteraufruf()
+            elif frage=="nein":
+                exit()
+            else:
+                print('\nAntworte bitte mit ja oder nein')
+                nachfrage()
 
         #Auswahl der Ausführung, je nachdem ob 'Temperatur', 'Wetter', oder 'Vorhersage' eingegeben worden ist
         if (abfrage.find("temperatur")>-1):
@@ -97,4 +110,4 @@ def wetteraufruf():
         nachfrage()
     
 #start der Funktion       
-#wetteraufruf()
+wetteraufruf()
