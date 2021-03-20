@@ -123,7 +123,7 @@ def addEL():
             einkaufsliste.write(new_item+"\n")
 
         # Anzeigen der Einkaufsliste
-        print("Deine Einkaufsliste:")
+        print("Deine Einkaufsliste:\n")
         einkaufsliste = open('Einkaufsliste.txt', 'r')
         print(einkaufsliste.read())
         einkaufsliste.close()
