@@ -12,7 +12,7 @@ from Hendrik import TIC_TAC_TOE
 from Mika import news
 from Bao import wetterfunktion
 from Endres import Sport_Kalender_Einkaufen
-#from Marius import Marius_Pong
+from Marius import Marius_Pong
 status = 1
 
 print("Herzlichen Willkommen zum neuen Chatbot.")
@@ -60,8 +60,8 @@ def funktionsaufruf(eingabe):
             #Starte TicTacToeModul. 
             TicTacToe = TIC_TAC_TOE.HendriksTicTacToe(nutzername)
             TicTacToe.starte_Spiel()
-        #if i in Spiel2:
-           # Marius_Pong.main()
+        if i in Spiel2:
+           Marius_Pong.main
     #------------------------Marius----------------------
         if i in Wetter:
             #Starte NewsModul.
