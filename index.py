@@ -41,7 +41,7 @@ def funktionsaufruf(eingabe):
     Wetter = ["wetter", "vorhersage"]
     Kalendar = ["kalender", "datum"]
     Einkaufsliste = ["liste", "einkaufsliste"]
-    loescheEinkaufsliste = ["liste löschen", "einkaufsliste löschen"]
+    loescheEinkaufsliste = ["loesche"]
 
     for i in words:
         if i in Covid:
