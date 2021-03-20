@@ -3,7 +3,7 @@
 '''
 Dieser Abschnitt beschäftigt sich mit einigen kleinen Nebenfeatures wie ein paar Sport Informationen, einem Kalender
 und einer Einkausliste. Um neben Spielen und Informationen auch ein paar andere nützliche Dinge zu haben, wurden hier
-noch die Einkaufsliste und ein einfacher Kalendar eingefügt. Um eine Einkaufsliste über eine Nutzung hinaus zu
+noch die Einkaufsliste und ein einfacher Kalender eingefügt. Um eine Einkaufsliste über eine Nutzung hinaus zu
 behalten, wird diese in einer zusätzlichen Textdatei abgespeichert.
 '''
 
@@ -14,7 +14,8 @@ from gnewsclient import gnewsclient
 import calendar
 
 
-#Nachrichten mit Abfrage für Generierung
+#Zusätzliche Sportnachrichtenfunktion, da zunächst eine Trennung von Nachrichten und Sport vorgesehen war
+#Kann durch einfaches hinzufügen eines Schlüsselworts und eines Aufrufs in der Main hinzugefügt werden
 def SportNachrichten():
 
     #Abfang Funktion für mögliche Verbindungsstörung
@@ -100,7 +101,7 @@ def Kalender():
 #Kalender()
 
 
-#Einkauslistenfunktion zum hinzufügen von Dingen
+#Einkauslistenfunktion zum hinzufügen zur Liste und Anzeigen bereits eingetragener Dinge
 def addEL():
 
     try:
