@@ -33,8 +33,8 @@ def funktionsaufruf(eingabe):
     # Die Wörter der Eingabe werden in einer Liste aufgeteilt.
     words = input_filter.split()
 
-    Covid = ["corona", "covid"]
-    News = ["news", "nachrichten", "schlagzeile", ]
+    Covid = ["corona", "covid", "corona zahlen", "covid zahlen", "corona daten", "covidzahlen", "coronazahlen"]
+    News = ["news", "nachrichten", "schlagzeilen", ]
     Spiel = ["spiel"]
     Spiel1 = ["tic", "tac", "toe", "legendäre", "drei", "tictactoe" ]
     Spiel2 = ["pong"]
