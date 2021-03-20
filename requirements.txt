@@ -6,3 +6,4 @@ requests
 colorama
 python-Levenshtein
 pandas
+matplotlib

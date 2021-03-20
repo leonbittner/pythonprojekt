@@ -40,6 +40,7 @@ def funktionsaufruf(eingabe):
     Spiel2 = ["pong"]
     Wetter = ["wetter", "vorhersage"]
     Kalendar = ["kalender", "datum"]
+    Einkaufsliste = ["liste", "einkaufsliste"]
     loescheEinkaufsliste = ["liste löschen", "einkaufsliste löschen"]
 
     for i in words:
