@@ -40,7 +40,7 @@ def funktionsaufruf(eingabe):
     Spiel2 = ["pong"]
     Wetter = ["wetter", "vorhersage"]
     Kalendar = ["kalender", "datum"]
-    Einkaufsliste = ["liste", "einkaufsliste"]
+    loescheEinkaufsliste = ["liste löschen", "einkaufsliste löschen"]
 
     for i in words:
         if i in Covid:
@@ -67,11 +67,14 @@ def funktionsaufruf(eingabe):
             #Starte NewsModul.
             wetterfunktion.wetteraufruf()
         if i in Kalendar:
-            #Starte NewsModul.
+            #Starte KalenderModul.
             Sport_Kalender_Einkaufen.Kalender()
         if i in Einkaufsliste:
-            #StarteEinkaufslistenmodul
+            #Starte Einkaufslistenmodul hinzufügen/anzeigen
             Sport_Kalender_Einkaufen.addEL()
+        if i in loescheEinkaufsliste:
+            #Starte Einkaufslistenmodul löschen
+            Sport_Kalender_Einkaufen.delEL()
         else:
             print("Das kenne ich leider noch nicht")
 
