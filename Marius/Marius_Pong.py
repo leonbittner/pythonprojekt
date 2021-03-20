@@ -11,62 +11,64 @@ Requirements: pip install pygame
 
 """
 import pygame, random, sys
-
-#Festlegung der Fenstergrößen x=Beite, y= Höhe
-x = 500
-y = 500
-
-#Spielerleben & Score
-spielerLeben = 3
-spielerScore = 0
-spielerAnzeige = "Score: "
-
-#Farben
-yellow = (255,255,0)
-white = (255,255,255)
-black = (0,0,0)
-red = (255,40,0)
-
-#Festlegung der Schlägergrößen
-schlaegerBreite = 100
-schlaegerHoehe= 15
-
-#Randomisierte Startposition des Schlägers
-schlaeger_x = 200
-schlaeger_y = 450
-
-#Variablen des Balls
-#Startposition
-ball_x = int(x/2)
-ball_y = int(y/2)
-
-#Radius des Balls
-ball_rad = 15
-
-#Bewegungen Schläger / Ball
-schlaeger_bew = 0
-ball_x_bew = 1
-ball_y_bew = -2
-
-#Initialisierung pygame
-pygame.init()
-pygame.display.set_caption("Pong Game")
-
-#Erstellung des Spielfeldscreens über pygame und einer Tupelliste für die Größe
-spielfeld = pygame.display.set_mode([x,y])
-back_image = pygame.image.load(r"Marius/Bild_arcade.jpg")
-back_top = spielfeld.get_height() - back_image.get_height()
-back_left = spielfeld.get_width()/2 - back_image.get_width()/2
-spielfeld.blit(back_image, (back_left,back_top))
-
-#Zeichnung des Spielballs und des Schlägers
-pygame.draw.circle(spielfeld, yellow, (ball_x, ball_y), ball_rad, 0)
-pygame.draw.rect(spielfeld, red, (schlaeger_x, schlaeger_y, schlaegerBreite, schlaegerHoehe),0)
-
-#Anzeigen der beiden Zeichnungen
-pygame.display.flip()
     
 """Methoden"""
+def startVariablen():
+    global spielerLeben, spielerScore, spielerAnzeige, back_left, back_top, back_image, white, black, red, yellow, schlaegerBreite, schlaegerHoehe, schlaeger_bew, schlaeger_x, schlaeger_y,ball_rad,ball_x_bew, ball_y_bew, ball_x, ball_y, spielfeld, x, y
+    #Festlegung der Fenstergrößen x=Beite, y= Höhe
+    x = 500
+    y = 500
+
+    #Spielerleben & Score
+    spielerLeben = 3
+    spielerScore = 0
+    spielerAnzeige = "Score: "
+
+    #Farben
+    yellow = (255,255,0)
+    white = (255,255,255)
+    black = (0,0,0)
+    red = (255,40,0)
+
+    #Festlegung der Schlägergrößen
+    schlaegerBreite = 100
+    schlaegerHoehe= 15
+
+    #Randomisierte Startposition des Schlägers
+    schlaeger_x = 200
+    schlaeger_y = 450
+
+    #Variablen des Balls
+    #Startposition
+    ball_x = int(x/2)
+    ball_y = int(y/2)
+
+    #Radius des Balls
+    ball_rad = 15
+
+    #Bewegungen Schläger / Ball
+    schlaeger_bew = 0
+    ball_x_bew = 1
+    ball_y_bew = -2
+
+    #Initialisierung pygame
+    pygame.init()
+    pygame.display.set_caption("Pong Game")
+
+    #Erstellung des Spielfeldscreens über pygame und einer Tupelliste für die Größe
+    spielfeld = pygame.display.set_mode([x,y])
+    back_image = pygame.image.load(r"Marius/Bild_arcade.jpg")
+    back_top = spielfeld.get_height() - back_image.get_height()
+    back_left = spielfeld.get_width()/2 - back_image.get_width()/2
+    spielfeld.blit(back_image, (back_left,back_top))
+
+    #Zeichnung des Spielballs und des Schlägers
+    pygame.draw.circle(spielfeld, yellow, (ball_x, ball_y), ball_rad, 0)
+    pygame.draw.rect(spielfeld, red, (schlaeger_x, schlaeger_y, schlaegerBreite, schlaegerHoehe),0)
+
+    #Anzeigen der beiden Zeichnungen
+    pygame.display.flip()
+
 #Ausgabe Leben
 def lebensAnzeige():
     schriftArt = pygame.font.SysFont("arial", 40)
@@ -168,6 +170,7 @@ def gameLogik():
 #SpielAblauf
 def spielAblauf():
     global schlaeger_bew
+    startVariablen()
     while spielerLeben > 0:
         #Standard Evenrhandler
         for event in pygame.event.get():
