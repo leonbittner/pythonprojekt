@@ -212,7 +212,7 @@ def spielAblauf():
             gameLogik()
 
 
-   if spielerLeben == 0:
+    if spielerLeben == 0:
         print("Du hast verloren! Dein Score war: " + str(spielerScore))
         sys.exit()   
 
