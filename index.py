@@ -46,7 +46,7 @@ def funktionsaufruf(eingabe):
     for i in words:
         if i in Covid:
             #Starte CovidModul.
-            covidzahlen.main()
+            covidzahlen.main(nutzername)
         if i in News:
             #Starte NewsModul.
             news.news_main()

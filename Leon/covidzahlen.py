@@ -59,10 +59,10 @@ def getdata(land):
                 if land.lower() == row[0].lower():
                     iso = row[1]         
             try:  
-              conn.request("GET","/reports?iso=" + iso + "&date=" + str(first_day),headers=headers)
+                conn.request("GET","/reports?iso=" + iso + "&date=" + str(first_day),headers=headers)
             except UnboundLocalError:
-              print("\nEntschuldigung! Dieses Land kenne ich leider nicht. Bitte verändern Sie die Formulierung oder wählen Sie ein anderes Land. \n")
-              break
+                print("\nEntschuldigung! Dieses Land kenne ich leider nicht. Bitte verändern Sie die Formulierung oder wählen Sie ein anderes Land. \n")
+                break
         res = conn.getresponse()
         data = res.read()
         covdata = json.loads(data)
@@ -126,8 +126,8 @@ def showFigures(land):
     ax.xaxis.set_major_locator(plt.MaxNLocator(10))
     plt.show() 
 
-def main():
-    print("Guten Tag! Gerne informiere ich Sie über die Covid-19-Lage in Ihrem Land.")
+def main(nutzername):
+    print("Gerne, " + nutzername +"! Ich informiere Sie über die Covid-19-Lage in Ihrem Land.")
     time.sleep(2)
     getdata(input("Für welches Land soll ich Ihnen die aktuellen Zahlen mitteilen? \nGeben Sie entweder ein Bundesland in Deutschland (z.B. Niedersachsen) oder einen Nationalstaat (z.B. Japan) ein.\n"))
 
