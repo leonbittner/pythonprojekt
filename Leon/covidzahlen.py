@@ -18,7 +18,6 @@ import http.client
 import json
 import datetime
 import time
-#import termplotlib as tpl
 from tqdm import tqdm
 import csv
 import matplotlib.pyplot as plt

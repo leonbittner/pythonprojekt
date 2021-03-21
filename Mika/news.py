@@ -33,7 +33,7 @@ def news_get_data(category_request):
     # Input ist nicht case-sensitive
     category_request = category_request.lower()
     # API-Key wird aus einer Textdatei eingelesen
-    api_key = open('api_key.txt', 'r')
+    api_key = open('News/api_key.txt', 'r')
     # Hier wird geprüft, ob die eingegebene Kategorie vorhanden ist
     if category_request in category:
         # News aus einer Kategorie werden über die Schnittstelle im JSON-Format geladen
