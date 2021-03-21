@@ -18,7 +18,7 @@ status = 1
 
 print("Herzlichen Willkommen zum neuen Chatbot.")
 nutzername = input("Wie heißt du denn?\n  ")
-print("Cool " + nutzername + ", ich bin Bob,\n Ich habe bisher folgende Funktionalitäten:\n - Aktuelle Covid-19-Zahlen (Länder o. Bundesländer)​ \n - Aktuelle News/Schlagzeilen​ \n - Live Wetter / Wetteraussichten​ \n - Kalenderinformationen​ \n - Ihre Einkaufsliste")
+print("Cool " + nutzername + ", ich bin Bob,\n Ich habe bisher folgende Funktionalitäten:\n - Aktuelle Covid-19-Zahlen (Länder o. Bundesländer)​ \n - Aktuelle News/Schlagzeilen​ \n - Live Wetter / Wetteraussichten​ \n - Kalenderinformationen​ \n - Ihre Einkaufsliste (Anzeigen/ Loeschen)")
 print("Darüber hinaus können wir coole Spiele zusammen spielen, wie \n - Der Arcade-Klassiker Pong​ \n - Das Legendäre TicTacToe")
 
 
@@ -42,7 +42,7 @@ def funktionsaufruf(eingabe):
     Wetter = ["wetter", "vorhersage"]
     Kalendar = ["kalender", "datum"]
     Einkaufsliste = ["liste", "einkaufsliste"]
-    loescheEinkaufsliste = ["loesche"]
+    loescheEinkaufsliste = ["loesche", "loeschen"]
 
     for i in words:
         if i in Covid:
@@ -98,7 +98,7 @@ funktionsaufruf(eingabe)
 
 def main():
     while status == 1:
-        eingabe = input("Kann ich dir noch anders helfen?\n Bitte wähle aus meinen Funktionalitäten:\n - Aktuelle Covid-19-Zahlen (Länder o. Bundesländer)​ \n - Aktuelle News/Schlagzeilen​ \n - Live Wetter / Wetteraussichten​ \n - Kalenderinformationen​ \n - Ihre Einkaufsliste \n - Der Arcade-Klassiker Pong​ \n - Das Legendäre TicTacToe \n - Wähle 'bye' zum Beenden. \n")
+        eingabe = input("Kann ich dir noch anders helfen?\n Bitte wähle aus meinen Funktionalitäten:\n - Aktuelle Covid-19-Zahlen (Länder o. Bundesländer)​ \n - Aktuelle News/Schlagzeilen​ \n - Live Wetter / Wetteraussichten​ \n - Kalenderinformationen​ \n - Ihre Einkaufsliste (Anzeigen/ Loeschen) \n - Der Arcade-Klassiker Pong​ \n - Das Legendäre TicTacToe \n - Wähle 'bye' zum Beenden. \n")
         funktionsaufruf(eingabe)
         
 main()
