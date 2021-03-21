@@ -7,7 +7,6 @@ Wenn der Schläger den Ball verliert, bekommt man einen neuen Ball, verliert man
 Die Leben werden dabei oben Links in der Ausgabe angezeigt. 
 Außerdem kann der Spieler während des Spiel seine Treffer mit dem Schläger sehen. Diese Treffer werden auf der Score-Anzeige unten links ausgegeben. 
 Der Score bezieht sich auf die erzielten Treffer während der ganzen drei Leben.
-Requirements: pip install pygame
 
 """
 import pygame, random, sys
@@ -15,6 +14,7 @@ import pygame, random, sys
 """Methoden"""
 def startVariablen():
     global spielerLeben, spielerScore, spielerAnzeige, back_left, back_top, back_image, white, black, red, yellow, schlaegerBreite, schlaegerHoehe, schlaeger_bew, schlaeger_x, schlaeger_y,ball_rad,ball_x_bew, ball_y_bew, ball_x, ball_y, spielfeld, x, y
+    
     #Festlegung der Fenstergrößen x=Beite, y= Höhe
     x = 500
     y = 500
@@ -149,13 +149,20 @@ def hitBall():
         if ball_x >= schlaeger_x-15 and ball_x <= schlaeger_x+schlaegerBreite+15:
             spielerScore += 1
             ball_y_bew *= -1
+        #Aktionen für verpassen des Schlägers
         else:
             spielerLeben -= 1
             reset()
 
+#Spiel Leerlauf
+def gameStartbildschirm():
+    lebensAnzeige()
+    scoreAnzeige()
+    pygame.display.flip()
+
 #Spielablauf
 def gameLogik():
-    spielfeld.blit(back_image, (back_left,back_top))
+    spielfeld.blit(back_image, (back_left,back_top)) #Zum reinigen des Bildschirms
     lebensAnzeige()
     scoreAnzeige()
     schlaegerAktionen()
@@ -169,15 +176,29 @@ def gameLogik():
 
 #SpielAblauf
 def spielAblauf():
-    global schlaeger_bew
+    global schlaeger_bew, nextStep, gameAktiv
+    print("Zum Starten die Leertaste drücken.")
+    nextStep = False
+    gameAktiv = True
     startVariablen()
-    while spielerLeben > 0:
-        #Standard Evenrhandler
+
+    #Laden des Startbildschirms
+    if nextStep == False:
+        gameStartbildschirm()
+
+    while spielerLeben > 0 and gameAktiv == True:
+        #Standard Eventhandler
         for event in pygame.event.get():
             #Beenden des Skriptes über Kreuz rechts oben
             if event.type == pygame.QUIT:
+                gameAktiv = False
+                print("Spiel beendet")
                 sys.exit()
-            #Tastenüberprüfung    
+
+            #Start Eventhandler = Leertaste
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                nextStep = True    
+                #Tastenüberprüfung    
             if event.type == pygame.KEYDOWN:
                 #Schläger nach links
                 if event.key == pygame.K_LEFT:
@@ -185,13 +206,15 @@ def spielAblauf():
                 #Schläger nach rechts
                 if event.key == pygame.K_RIGHT:
                     schlaeger_bew = 2
-        gameLogik()
+        
+        #Starten des Spiels bei drücken der Leertaste und dem Setzen der Variable nextStep auf true
+        if nextStep == True:
+            gameLogik()
 
-    print("Du hast verloren!")   
+
+    print("Du hast verloren! Dein Score war: " + str(spielerScore))   
 
 
 #Main
-def main():
+if __name__ == '__main__':
     spielAblauf()
-
-
