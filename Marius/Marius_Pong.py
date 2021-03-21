@@ -115,7 +115,7 @@ def reset():
 def schlaegerBlock():
     global schlaeger_bew
     if schlaeger_x <= 0 or schlaeger_x >= x-schlaegerBreite:
-        schlaeger_bew = 0
+        schlaeger_bew *= -1
 
 #Schläger Bewegungen
 def schlaegerAktionen():
