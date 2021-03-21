@@ -58,7 +58,7 @@ def wetteraufruf():
             if frage=="ja":
                 wetteraufruf()
             elif frage=="nein":
-                exit()
+                print ("Tschüss")
             else:
                 print('\nAntworte bitte mit ja oder nein')
                 nachfrage()
