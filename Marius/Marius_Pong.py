@@ -160,6 +160,15 @@ def gameStartbildschirm():
     scoreAnzeige()
     pygame.display.flip()
 
+#restart oder ende des spiels
+def pong_proceed():
+    pongProceed_request = input("\nMöchten Sie eine weitere Runde spielen?\n")
+    if pongProceed_request.lower() == "ja":
+        spielAblauf()
+    else:
+        pygame.quit()
+        print("\nBis zum nächsten Mal!")    
+
 #Spielablauf
 def gameLogik():
     spielfeld.blit(back_image, (back_left,back_top)) #Zum reinigen des Bildschirms
@@ -214,7 +223,8 @@ def spielAblauf():
 
     if spielerLeben == 0:
         print("Du hast verloren! Dein Score war: " + str(spielerScore))
-        sys.exit()   
+        pong_proceed() 
+        return  
 
 
 #Main
