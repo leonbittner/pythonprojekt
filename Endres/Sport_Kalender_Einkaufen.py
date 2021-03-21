@@ -105,7 +105,12 @@ def Kalender():
 def addEL():
 
     try:
-        #Öffnen der Einkaufsliste
+        #Öffnen der Einkaufsliste zum Anzeigen
+        print("Deine Einkaufsliste:\n")
+        einkaufsliste = open('Einkaufsliste.txt', 'r')
+        print(einkaufsliste.read())
+        einkaufsliste.close()
+        #Öffnen der Einkaufsliste zum Anhängen
         einkaufsliste = open('Einkaufsliste.txt','a')
         print("Was soll auf der Einkaufslsite hinzugefügt werden?")
         print("Schreibe 'OK' wenn du fertig bist.")
