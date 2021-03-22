@@ -1,7 +1,6 @@
-#Endres Sander
-#Matr.: 41324
+# Endres Sander - Matr.: 41324
 
-#Beschreibung
+## Beschreibung
 Mein Programmabschnitt beschäftigt sich im Allgemeinen mit einigen Zusatzfunktionen, welch bei vielen 
 Standard Chatbots integriert sind. Als einfache Inspiration kann hier die Alexa von Amazon genannt werden.
 
@@ -22,7 +21,7 @@ dem Beenden des Programms erhalten bleibt. Hierfür werden Funktionen zum schrei
 Schleife können bis das Beenden vom User gefordert wird Dinge hinzugefügt werden. Eine weitere Funktion
 überschreibt die Einkaufsliste und erstellt so eine Neue.
 
-#Quellen
+## Quellen
 Vorlesungsinhalte
 Alexa von Amazon
 Sportnachrichten: https://www.geeksforgeeks.org/build-an-application-to-extract-news-from-google-news-feed-using-python/

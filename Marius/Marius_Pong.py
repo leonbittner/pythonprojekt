@@ -5,7 +5,7 @@ Diese aufzurufende Funktion des ChatBots beinhaltet das Spiel Pong, welches aus 
 Es entspricht in etwa einem Solo-Pong, bei dem man mit dem Schläger den Ball so lenken soll, dass der Ball nicht am Schläger vorbei geht. 
 Wenn der Schläger den Ball verliert, bekommt man einen neuen Ball, verliert man aber insgesamt drei Bälle, so gilt das Spiel als Verloren.
 Die Leben werden dabei oben Links in der Ausgabe angezeigt. 
-Außerdem kann der Spieler während des Spiel seine Treffer mit dem Schläger sehen. Diese Treffer werden auf der Score-Anzeige unten links ausgegeben. 
+Außerdem kann der Spieler während des Spiel seine Treffer mit dem Schläger sehen. Diese Treffer werden auf der Score-Anzeige unten Rechts ausgegeben. 
 Der Score bezieht sich auf die erzielten Treffer während der ganzen drei Leben.
 
 """

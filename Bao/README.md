@@ -28,6 +28,7 @@ Voraussetzung für die Ausführung: pip install requests, pip install pandas
 
 ## Quellen:
 https://openweathermap.org/api
+
 https://www.w3schools.com/python/ref_requests_response.asp
 
 
