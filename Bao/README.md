@@ -18,5 +18,9 @@ wird die Wetterfunktion wieder aufgerufen. Beim nein wird die wetterfunktion bee
 In der Abfrage 'Willst du weitere Wetterdaten:' kann entweder mit ja oder nein beantwortet werden
 Voraussetzung für die Ausführung: pip install requests, pip install pandas
 
+Quellen:
+https://openweathermap.org/api
+https://www.w3schools.com/python/ref_requests_response.asp
+
 
 
