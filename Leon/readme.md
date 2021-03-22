@@ -10,7 +10,7 @@ Es können auch Nationalstaaten abgefragt werden (hier jedoch nur Gesamtzahlen, 
 
 Die Daten werden von der Schnittstelle im JSON Format beantwortet. Für jeden Tag muss eine einzelne Anfrage gestellt werden, dies ist zwar performance-technisch nicht optimal, allerdings der Architektur der Schnittstelle geschuldet. Um die Daten der letzten 30 Tage anzuzeigen, wird das aktuelle Datum um 30 Tage rückdatiert und mit einer for-Schleife wird in jedem Durchgang ein Tag addiert und eine neue Anfrage erstellt.
 
-Es werden durch die for-Schleife zwei Listen befüllt: "dates" und "fallzahlen". Mithilfe der Bibliothek "termplotlib" werden die Listen in der Kommandozeile geplottet. Außerdem wird die tagesaktuelle Zahl der aktiv Infizierten, genesenen Menschen und der Todesfälle ausgegeben. 
+Es werden durch die for-Schleife zwei Listen befüllt: "dates" und "fallzahlen". Mithilfe von matplotlib werden die Listen anschließend geplottet. Außerdem wird die tagesaktuelle Zahl der aktiv Infizierten, genesenen Menschen und der Todesfälle in der Kommandozeile ausgegeben. 
 
 ## Daten
 
