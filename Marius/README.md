@@ -32,5 +32,4 @@ Google Bilder
 /********** Nutzung ***********/
 
 Bitte stellen Sie sicher, dass Sie Python Version 3 verwenden und vor der ersten Ausführung aus dem Projektverzeichnis die Projektabhängigkeiten installiert haben:
-
 pip3 install -r "requirements.txt"
