@@ -150,13 +150,13 @@ def delEL():
     if a == "ja":
         einkaufsliste = open('Einkaufsliste.txt', 'w')
         einkaufsliste.close()
-        print("Liste wurde gelöscht.")
+        print("Liste wurde gelöscht.\n")
 
     elif a == "nein":
-        print("Liste wurde nicht gelöscht.")
+        print("Liste wurde nicht gelöscht.\n")
 
     #Für falsche Eingaben
     else:
-        print("Keine gültige Eingabe!")
+        print("Keine gültige Eingabe!\n")
 
 #delEL()
