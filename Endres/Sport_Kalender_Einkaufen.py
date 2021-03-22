@@ -64,10 +64,10 @@ def Kalender():
     #Abfang für falsche Eingaben
     try:
         #Input für Jahr des Kalenders
-        Jahr = input("Aus welchem Jahr willst du den Kalender sehen?(Beispiel: '2020')")
+        Jahr = input("Aus welchem Jahr willst du den Kalender sehen?(Beispiel: '2020')\n")
 
         #Input für Monat des Kalenders
-        monatInput = input("Und aus welchem Monat willst du den Kalender sehen ?(Beispiel: 'Januar')")
+        monatInput = input("Und aus welchem Monat willst du den Kalender sehen ?(Beispiel: 'Januar')\n")
 
         months = [
             (1, 'Januar'),
@@ -112,7 +112,7 @@ def addEL():
         einkaufsliste.close()
         #Öffnen der Einkaufsliste zum Anhängen
         einkaufsliste = open('Einkaufsliste.txt','a')
-        print("Was soll auf der Einkaufslsite hinzugefügt werden?")
+        print("Was soll auf der Einkaufsliste hinzugefügt werden?")
         print("Schreibe 'OK' wenn du fertig bist.")
 
         #while Schleife zum hinzufügen mehrerer Dinge
@@ -145,14 +145,14 @@ def addEL():
 def delEL():
 
     #Zusätzliche Abfrage
-    a = input("Einkaufsliste wirklich löschen? Ja/Nein\n> ")
+    a = input("Einkaufsliste wirklich löschen? Ja/Nein\n> ").lower()
 
-    if a == "Ja":
+    if a == "ja":
         einkaufsliste = open('Einkaufsliste.txt', 'w')
         einkaufsliste.close()
         print("Liste wurde gelöscht.")
 
-    elif a == "Nein":
+    elif a == "nein":
         print("Liste wurde nicht gelöscht.")
 
     #Für falsche Eingaben
