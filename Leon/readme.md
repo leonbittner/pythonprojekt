@@ -1,4 +1,5 @@
 # Covid-Bot
+Leon Bittner, 41289
 
 Diese Funktion des Bots kann die tagesaktuellen Covid-19 Fallzahlen verschiedener Regionen anzeigen. Die Daten stammen aus einer frei zugänglichen Schnittstelle der Johns Hopkins University. 
 
