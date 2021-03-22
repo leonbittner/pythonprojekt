@@ -16,5 +16,7 @@ pip install requests, colorama
 
 ## Inspiration
 https://www.python-lernen.de/chatbot-programmieren.htm
+
 https://newsapi.org/s/germany-news-api
+
 YouTube
