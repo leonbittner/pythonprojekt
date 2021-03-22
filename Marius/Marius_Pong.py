@@ -162,6 +162,7 @@ def gameStartbildschirm():
 
 #restart oder ende des spiels
 def pong_proceed():
+    print("Du hast verloren! Dein Score war: " + str(spielerScore))
     pongProceed_request = input("\nMöchten Sie eine weitere Runde spielen?\n")
     if pongProceed_request.lower() == "ja":
         spielAblauf()
@@ -222,7 +223,6 @@ def spielAblauf():
 
 
     if spielerLeben == 0:
-        print("Du hast verloren! Dein Score war: " + str(spielerScore))
         pong_proceed() 
         return  
 
