@@ -1,8 +1,8 @@
-/********** Hendrik Schumann (41325) **********/
+# Hendrik Schumann (41325) 
 
-/********** Tic-Tac-Toe **********/
+## Tic-Tac-Toe 
 
-Grundidee:
+## Grundidee:
 
 Tic-Tac-Toe oder Drei gewinnt (auch Kreis und Kreuz, Dodelschach) ist ein klassisches, 
 einfaches Zweipersonen-Strategiespiel, dessen Geschichte sich bis ins 12. Jahrhundert v. Chr. zurückverfolgen lässt.
@@ -14,7 +14,7 @@ Spalte oder Diagonalen setzen konnte. (Quelle: Wikipedia)
 
 
 
-/********** Konzeption des Spiels ***********/
+## Konzeption des Spiels ##
 
 Diese Klasse bietet die Möglichkeit, dass Spiel TicTacToe zu gegen den Chatbot zuspielen. Nachdem das Objekt erzeugt wurde(Übergabeparameter: Nutzername), kann das Spiel mit der Funktion  starteSpiel() begonnen werden. 
 Es wurde darauf geachtet, alles in einzelene Funktionen  abzubilden, um die modularität zu gewährleisten und ggf. Weitere Entwicklungen einfach vorzunehmen.
@@ -23,7 +23,7 @@ Nachdem der Spieler einen validen Spielzug gespielt hat, wird überprüft, ob ei
 
 Wenn ein Spieler gewonnen hat, wird seine benötigte Zeit ausgegeben und das Ergebniss in eine CSV Datei gespeichert. Danach werden alle Spielergebnisse in einem Balkemdiagram ausgegeben.
 
-/********** Weitere Informationen ***********/
+## Weitere Informationen 
 
 Bitte stellen Sie sicher, dass Sie Python Version 3 verwenden und vor der ersten Ausführung aus dem Projektverzeichnis die Projektabhängigkeiten installiert haben:
 
