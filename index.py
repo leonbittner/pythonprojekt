@@ -11,7 +11,7 @@ from Marius import Marius_Pong
 global status 
 status = 1
 
-print("Herzlichen Willkommen zum neuen Chatbot.")
+print("\nHerzlich Willkommen zu unserem Chatbot.")
 nutzername = input("Wie heißt du denn?\n  ")
 print("Cool " + nutzername + ", ich bin Bob,\n Ich habe bisher folgende Funktionalitäten:\n - Aktuelle Covid-19-Zahlen (Länder o. Bundesländer)​ \n - Aktuelle News/Schlagzeilen​ \n - Live Wetter / Wetteraussichten​ \n - Kalenderinformationen​ \n - Ihre Einkaufsliste (Anzeigen/ Loeschen)")
 print("Darüber hinaus können wir coole Spiele zusammen spielen, wie \n - Der Arcade-Klassiker Pong​ \n - Das Legendäre TicTacToe")
