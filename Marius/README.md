@@ -1,4 +1,4 @@
-# Marius Meineke (41311) - Pong - Der Arcade Klassiker
+# Marius Meineke (Matr.nr.: 41311) - Pong - Der Arcade Klassiker
 
 ## Grundidee
 
