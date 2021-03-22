@@ -1,6 +1,6 @@
 # Covid-Bot
 
-Diese Funktion des Bots kann die tagesaktuellen Covid-19 Fallzahlen verschiedener Regionen anzeigen. Die Daten stammen aus einer frei zugänglichen Schnisttselle der Johns Hopkins University. 
+Diese Funktion des Bots kann die tagesaktuellen Covid-19 Fallzahlen verschiedener Regionen anzeigen. Die Daten stammen aus einer frei zugänglichen Schnittstelle der Johns Hopkins University. 
 
 ## Funktionsweise
 
