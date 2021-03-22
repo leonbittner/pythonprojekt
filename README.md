@@ -3,7 +3,7 @@
 Das vorliegende Projekt wurde von Bao Nguyen, Endres Sander, Marius Meineke, Hendrik Schumann, Mika Selent und Leon Bittner erstellt. Es handelt sich um einen Chatbot, mit welchem größtenteils über die Kommandozeile interagiert wird. Er beeinhaltet die nachfolgenden Funktionen:
 
 - Ausgabe von internationalen Covid-19-Fallzahlen (Leon Bittner)
-- Anzeige von Nachrichten verschiedener Kategorien (Mika Selent)
+- Anzeige von Nachrichten aus verschiedenen Kategorien und individuellen Themen (Mika Selent)
 - Ausgabe des aktuellen Wetters sowie der Vorhersage für Orte in Deutschland (Bao Nguyen)
 - Anzeige eines Monatskalenders sowie einer editierbaren Einkaufsliste (Endes Sander)
 - Pong Game mit grafischen Elementen (Marius Meineke)
