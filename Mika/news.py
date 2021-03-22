@@ -7,7 +7,7 @@ Die Daten stammen aus einer Schnittstelle von 'newsapi.org', welche wiederum die
 Zunächst wird dafür die Benutzereingabe mit einem Dictionary der Kategorien abgeglichen.
 Wenn die Benutzereingabe nicht mit einer Kategorie übereinstimmt, wird nach möglichen verfügbaren Artikeln für ein individuelles Thema gesucht.
 Die Anfrage an die Schnittstelle erfolgt per HTTP und die Daten werden von der Schnittstelle im JSON-Format beantwortet.
-Ausgegeben werden immer nur die ersten fünf Artikel, sortiert nach Popularität.
+Der Key für die Anfrage wird hierbei aus einer externen Text-Datei bezogen. Ausgegeben werden immer nur die ersten fünf Artikel, sortiert nach Popularität.
 Nach erfolgreicher Ausgabe oder auch fehlerhafter Suche, kann eine neue Anfrage getätigt werden.
 Vorraussetzung: pip install requests, colorama
 
@@ -56,11 +56,11 @@ def news_get_data(category_request):
     news_proceed()
 
 def news_show(news):
-    # Das Attribut 'count' bestimmt die Anzahl der maximal angezeigten Artikel
-    count = 5
+    # Das Attribut 'number' bestimmt die Anzahl der maximal angezeigten Artikel
+    number = 5
     # Die Artikel werden in der Kommandozeile angezeigt
     for i in news['articles']:
-        if count > 0:
+        if number > 0:
             print(Fore.RED + "\n-----------------------Titel------------------------")
             print(Fore.WHITE + i['title'])
             description = i['description']
@@ -79,7 +79,7 @@ def news_show(news):
                         print(Fore.WHITE + description)
             print(Fore.RED + "------------------------Link------------------------")
             print(Fore.BLUE + i['url'], "\n")
-            count -= 1
+            number -= 1
 
 def news_proceed():
     proceed_request = input("\nMöchten Sie über weitere News informiert werden? (Ja/Nein)\n")
