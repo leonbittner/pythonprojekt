@@ -1,10 +1,5 @@
+#Index.py erstellt von Mika Selent, Leon Bittner und Hendrik Schumann
 
-"""
-Index.py erstellt von Mika Selent, Leon Bittner und Hendrik Schumann
-
-Über die Index ist es mglich, die einzelnen Module zu öffnen.
-
-"""
 
 import re
 from Leon import covidzahlen
