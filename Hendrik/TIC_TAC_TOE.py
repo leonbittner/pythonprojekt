@@ -88,10 +88,16 @@ class HendriksTicTacToe():
         freiefelder = []
         for freiesfeld in self.feld:
             #Nicht belegte Felder werden in ein extra Array gespeichert, aus welchen die KI eins zufällig wählt.
-            if freiesfeld != 'X' and freiesfeld != 'O':
+            if freiesfeld != 'X' and freiesfeld != '#':
                 freiefelder += freiesfeld
-        spielzug = int(random.choice(freiefelder))
-        self.feld[spielzug] = 'O'
+        try:
+            spielzug = int(random.choice(freiefelder))
+        except:
+            print("Unentschieden, bis zum nächsten mal.")
+             #Das Spiel wird als beendet deklariert.
+            self.status = 0
+            return
+        self.feld[spielzug] = '#'
         self.kontrolle_gewonnen()
         #Der nächste Spielzug des Spielers wird gestartet.
         self.starte_Spiel()  

@@ -21,4 +21,4 @@ Bitte stellen Sie sicher, dass Sie Python Version 3 verwenden und vor der ersten
 ```bash
 pip3 install -r "requirements.txt"
 ```
-Der Bot wird über die index.py gestartet. 
+Der Bot wird über die index.py gestartet. Wenn Sie das Programm mithilfe einer Entwicklungsumgebung starten, dann stellen Sie bitte sicher, dass die Shell auf das Projektverzeichnis zeigt. 
