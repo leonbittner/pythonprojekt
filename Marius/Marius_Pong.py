@@ -167,7 +167,7 @@ def pong_proceed():
         spielAblauf()
     else:
         pygame.quit()
-        print("\nBis zum nächsten Mal!")    
+        print("\nSpiel beendet. Bis zum nächsten Mal!")    
 
 #Spielablauf
 def gameLogik():
@@ -201,8 +201,8 @@ def spielAblauf():
             #Beenden des Skriptes über Kreuz rechts oben
             if event.type == pygame.QUIT:
                 gameAktiv = False
-                print("Spiel beendet")
-                sys.exit()
+                pong_proceed()
+                
 
             #Start Eventhandler = Leertaste
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
