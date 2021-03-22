@@ -1,4 +1,4 @@
-'''
+Wetterfunktion des Chatbots:
 In dieser Funktion des Chatbots kann die Temperatur, das Wetter oder die Vorhersage der nächsten 5 Tage aus 
 Hannover abgefragt werden. Es kann auch eine andere Stadt mit eingegeben werden und die dazugehörige Temperatur, Wetter, Vorhersage
 wird wiedergegeben für die genannte Stadt
@@ -19,6 +19,4 @@ In der Abfrage 'Willst du weitere Wetterdaten:' kann entweder mit ja oder nein b
 Voraussetzung für die Ausführung: pip install requests, pip install pandas
 
 
-
-'''
 
