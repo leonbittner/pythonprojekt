@@ -162,7 +162,7 @@ def gameStartbildschirm():
 
 #restart oder ende des spiels
 def pong_proceed():
-    print("Du hast verloren! Dein Score war: " + str(spielerScore))
+    print("\nDu hast verloren! Dein Score war: " + str(spielerScore))
     pongProceed_request = input("\nMöchten Sie eine weitere Runde spielen?\n")
     if pongProceed_request.lower() == "ja":
         spielAblauf()
@@ -203,8 +203,8 @@ def spielAblauf():
             if event.type == pygame.QUIT:
                 gameAktiv = False
                 pong_proceed()
+                return
                 
-
             #Start Eventhandler = Leertaste
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 nextStep = True    
