@@ -20,9 +20,13 @@ Der Score bezieht sich auf die erzielten Treffer während der ganzen drei Leben.
 /********** Inspirationsquellen ***********/
 
 https://www.python-lernen.de/chatbot-programmieren.htm
+
 https://www.python-forum.de/viewtopic.php?t=33094
+
 ww3.school
+
 YouTube
+
 Brainstorming in der Gruppe
 
 /********** Bilder ***********/
