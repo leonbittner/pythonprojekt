@@ -14,9 +14,7 @@ Spalte oder Diagonalen setzen konnte. (Quelle: Wikipedia)
 
 Diese Klasse bietet die Möglichkeit, dass Spiel TicTacToe zu gegen den Chatbot zuspielen. Nachdem das Objekt erzeugt wurde(Übergabeparameter: Nutzername), kann das Spiel mit der Funktion  starteSpiel() begonnen werden. 
 Es wurde darauf geachtet, alles in einzelene Funktionen  abzubilden, um die modularität zu gewährleisten und ggf. Weitere Entwicklungen einfach vorzunehmen.
-
 Nachdem der Spieler einen validen Spielzug gespielt hat, wird überprüft, ob ein Spieler gewonnen hat, danach wird die Funktion für den Zug der KI aufgerufen. Zwischen den Spielzügen wird immer das Spielfeld ausgegeben.
-
 Wenn ein Spieler gewonnen hat, wird seine benötigte Zeit ausgegeben und das Ergebniss in eine CSV Datei gespeichert. Danach werden alle Spielergebnisse in einem Balkemdiagram ausgegeben.
 
 ## Weitere Informationen zu Verwendung
