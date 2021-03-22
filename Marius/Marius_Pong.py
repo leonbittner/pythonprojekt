@@ -187,7 +187,7 @@ def gameLogik():
 #SpielAblauf
 def spielAblauf():
     global schlaeger_bew, nextStep, gameAktiv
-    print("Zum Starten die Leertaste drücken.")
+    print("\nZum Starten die Leertaste drücken.")
     nextStep = False
     gameAktiv = True
     startVariablen()
