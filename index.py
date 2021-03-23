@@ -49,7 +49,7 @@ def funktionsaufruf(eingabe):
             news.news_main()
             return
         if i in Spiel:
-            if input("Tic Tac Toe (Ja/Nein)") == "Ja":
+            if input("Tic Tac Toe (Ja/Nein)").lower() == "ja":
                 TicTacToe = TIC_TAC_TOE.HendriksTicTacToe(nutzername)
                 TicTacToe.starte_Spiel()
                 return

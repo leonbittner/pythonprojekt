@@ -86,18 +86,75 @@ class HendriksTicTacToe():
         print("Jetzt bin ich dran")
         time.sleep(1)
         freiefelder = []
-        for freiesfeld in self.feld:
-            #Nicht belegte Felder werden in ein extra Array gespeichert, aus welchen die KI eins zufällig wählt.
-            if freiesfeld != 'X' and freiesfeld != '#':
-                freiefelder += freiesfeld
-        try:
-            spielzug = int(random.choice(freiefelder))
-        except:
-            print("Unentschieden, bis zum nächsten mal.")
-             #Das Spiel wird als beendet deklariert.
-            self.status = 0
-            return
-        self.feld[spielzug] = '#'
+        #Mit diesen Bedingungen überprüft der Bot, ob eine der Gewinnbedinungen kurz vor dem erfüllen steht, entweder er verhindert das Gewinnen des Gegners oder Gewinnt selber
+        
+        #Überprüfung Gewinnbedinungen - Reihen
+        if self.feld[0] == self.feld[1] and (self.feld[2] != 'X' or self.feld[2] != '#'):
+            self.feld[2] = '#'
+        if self.feld[2] == self.feld[1] and (self.feld[0] != 'X' or self.feld[0] != '#'):
+            self.feld[0] = '#'
+        if self.feld[2] == self.feld[0] and (self.feld[1] != 'X' or self.feld[1] != '#'):
+            self.feld[1] = '#'
+
+        if self.feld[3] == self.feld[4] and (self.feld[5] != 'X' or self.feld[5] != '#'):
+            self.feld[5] = '#'
+        if self.feld[4] == self.feld[5] and (self.feld[3] != 'X' or self.feld[3] != '#'):
+            self.feld[3] = '#'
+        if self.feld[5] == self.feld[3] and (self.feld[4] != 'X' or self.feld[4] != '#'):
+            self.feld[4] = '#'
+
+        if self.feld[6] == self.feld[7] and (self.feld[8] != 'X' or self.feld[8] != '#'):
+            self.feld[8] = '#'  
+        if self.feld[7] == self.feld[8] and (self.feld[6] != 'X' or self.feld[6] != '#'):
+            self.feld[6] = '#'  
+        if self.feld[8] == self.feld[6] and (self.feld[7] != 'X' or self.feld[7] != '#'):
+            self.feld[7] = '#'
+
+        #Überprüfung Gewinnbedingungen - Spalten.
+        if self.feld[0] == self.feld[3] and (self.feld[6] != 'X' or self.feld[6] != '#'):
+            self.feld[6] = '#'
+        if self.feld[6] == self.feld[0] and (self.feld[3] != 'X' or self.feld[3] != '#'):
+            self.feld[3] = '#'
+        if self.feld[3] == self.feld[6] and (self.feld[0] != 'X' or self.feld[0] != '#'):
+            self.feld[0] = '#'
+
+        if self.feld[1] == self.feld[4] and (self.feld[7] != 'X' or self.feld[7] != '#'):
+            self.feld[7] = '#'
+        if self.feld[7] == self.feld[1] and (self.feld[4] != 'X' or self.feld[4] != '#'):
+            self.feld[4] = '#'
+        if self.feld[5] == self.feld[8] and (self.feld[2] != 'X' or self.feld[2] != '#'):
+            self.feld[2] = '#'
+
+        if self.feld[2] == self.feld[5] and (self.feld[8] != 'X' or self.feld[8] != '#'):
+            self.feld[8] = '#'
+        if self.feld[8] == self.feld[2] and (self.feld[5] != 'X' or self.feld[5] != '#'):
+            self.feld[5] = '#'
+        if self.feld[8] == self.feld[5] and (self.feld[2] != 'X' or self.feld[2] != '#'):
+            self.feld[2] = '#'
+
+        #Überprüfung Gewinnbedingungen - Diagonale.
+
+        if self.feld[0] == self.feld[4] and (self.feld[8] != 'X' or self.feld[8] != '#'):
+            self.feld[8] = '#'
+        if self.feld[8] == self.feld[0] and (self.feld[4] != 'X' or self.feld[4] != '#'):
+            self.feld[4] = '#'
+        if self.feld[8] == self.feld[4] and (self.feld[0] != 'X' or self.feld[0] != '#'):
+            self.feld[0] = '#'
+        #Die Diagonale 2,4,6 wird nicht geprüft, um schneller zu gewinnen :D
+        
+        else:   
+            for freiesfeld in self.feld:
+                #Nicht belegte Felder werden in ein extra Array gespeichert, aus welchen die KI eins zufällig wählt.
+                if freiesfeld != 'X' and freiesfeld != '#':
+                    freiefelder += freiesfeld
+            try:
+                spielzug = int(random.choice(freiefelder))
+            except:
+                print("Unentschieden, bis zum nächsten mal.")
+                #Das Spiel wird als beendet deklariert.
+                self.status = 0
+                return
+            self.feld[spielzug] = '#'
         self.kontrolle_gewonnen()
         #Der nächste Spielzug des Spielers wird gestartet.
         self.starte_Spiel()  
