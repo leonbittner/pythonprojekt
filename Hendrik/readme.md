@@ -21,7 +21,8 @@ Wenn ein Spieler gewonnen hat, wird seine benötigte Zeit ausgegeben und das Erg
 
 Bitte stellen Sie sicher, dass Sie Python Version 3 verwenden und vor der ersten Ausführung aus dem Projektverzeichnis die Projektabhängigkeiten installiert haben:
 
+```bash
 pip3 install -r "requirements.txt"
-
+```
 
 

@@ -60,7 +60,7 @@ def wetteraufruf():
             wahrnehmung=y["feels_like"]
 
             print (f"\nEs ist gerade {temperatur} Grad, aber gefühlt nur {wahrnehmung} Grad.")
-
+            nachfrage()
             
         
         elif (abfrage.find("wetter")>-1):
@@ -80,6 +80,7 @@ def wetteraufruf():
             wettermain=x["weather"][0]["main"]
 
             print (f"\nEs gibt hauptsächlich {wettermain}, genauer gesagt {wetter}.\nWind: {wind}")
+            nachfrage()
 
         elif (abfrage.find("vorhersage")>-1):
             x=urlfilter(abfrage, "forecast")
@@ -91,11 +92,12 @@ def wetteraufruf():
             data = data.rename(columns={'dt_txt': 'Zeitraum', 'main.temp_min': 'Mindesttemperatur', 'main.temp_max':'Maximaltemperatur', 'main':'Überwiegend', 'description':'Beschreibung'})
 
             print (data)
+            nachfrage()
             
         else:
             print ("\nGib bitte ein, ob du 'Temperatur', 'Wetter' oder die 'Vorhersage' der nächsten Tage angezeigt bekommen möchtest.")
             wetteraufruf()
 
-        nachfrage()
+        
     
 
