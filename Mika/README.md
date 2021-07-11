@@ -1,4 +1,4 @@
-# Chatbot News Mika Selent (41326)
+# Chatbot News Mika Selent
 
 Diese Funktion des Bots kann die tagesaktuellen News einer allgemeinen Kategorie oder eines individuellen Themas anzeigen.
 
